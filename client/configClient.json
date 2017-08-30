@@ -1,0 +1,4 @@
+{
+  "apiPackage":"com.jeelis.psd2hub.client.api",
+  "modelPackage":"com.jeelis.psd2hub.client.model"
+}
