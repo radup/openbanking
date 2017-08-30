@@ -32,7 +32,7 @@ public class PaymentsApiExample {
         body.setData(pymSubmission);
         
         String xFapiCustomerLastLoggedTime = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()); // String | The time when the PSU last logged in with the TPP.
-        String xFapiCustomerIpAddress = InetAddress.getLocalHost().getHostAddress(); // String | The PSU's IP address if the PSU is currently logged in with the TPP.
+        String xFapiCustomerIpAddress = "127.0.0.1"; // String | The PSU's IP address if the PSU is currently logged in with the TPP.
         String xFapiInteractionId = UUID.randomUUID().toString(); // String | An RFC4122 UID used as a correlation id.
         try {
             PaymentSubmitPOST201Response result = apiInstance.createPaymentSubmission(xIdempotencyKey, xFapiFinancialId, authorization, xJwsSignature, body, xFapiCustomerLastLoggedTime, xFapiCustomerIpAddress, xFapiInteractionId);

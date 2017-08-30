@@ -112,7 +112,9 @@ public class ApiClient {
      */
     public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-    private String basePath = "http://localhost:8080/open-banking";
+    //private String basePath = "http://localhost:8080/open-banking";
+    private String basePath = "http://openbanking-newproject.b9ad.pro-us-east-1.openshiftapps.com/open-banking";
+    
     private boolean lenientOnJson = false;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
