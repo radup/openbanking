@@ -6,11 +6,14 @@ import com.jeelis.psd2hub.client.model.*;
 import com.jeelis.psd2hub.client.api.PaymentsApi;
 
 import java.io.File;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class PaymentsApiExample {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
         // Configure OAuth2 access token for authorization: PSUOAuth2Security
@@ -23,9 +26,14 @@ public class PaymentsApiExample {
         String authorization = "authorization_example"; // String | An Authorisation Token as per https://tools.ietf.org/html/rfc6750
         String xJwsSignature = "xJwsSignature_example"; // String | Header containing a detached JWS signature of the body of the payload.
         PaymentSubmissionPOSTRequest body = new PaymentSubmissionPOSTRequest(); // PaymentSubmissionPOSTRequest | Setup a single immediate payment
-        String xFapiCustomerLastLoggedTime = "xFapiCustomerLastLoggedTime_example"; // String | The time when the PSU last logged in with the TPP.
-        String xFapiCustomerIpAddress = "xFapiCustomerIpAddress_example"; // String | The PSU's IP address if the PSU is currently logged in with the TPP.
-        String xFapiInteractionId = "xFapiInteractionId_example"; // String | An RFC4122 UID used as a correlation id.
+        
+        PaymentSubmission pymSubmission = new PaymentSubmission();
+        pymSubmission.setPaymentId(UUID.randomUUID().toString());
+        body.setData(pymSubmission);
+        
+        String xFapiCustomerLastLoggedTime = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()); // String | The time when the PSU last logged in with the TPP.
+        String xFapiCustomerIpAddress = InetAddress.getLocalHost().getHostAddress(); // String | The PSU's IP address if the PSU is currently logged in with the TPP.
+        String xFapiInteractionId = UUID.randomUUID().toString(); // String | An RFC4122 UID used as a correlation id.
         try {
             PaymentSubmitPOST201Response result = apiInstance.createPaymentSubmission(xIdempotencyKey, xFapiFinancialId, authorization, xJwsSignature, body, xFapiCustomerLastLoggedTime, xFapiCustomerIpAddress, xFapiInteractionId);
             System.out.println(result);

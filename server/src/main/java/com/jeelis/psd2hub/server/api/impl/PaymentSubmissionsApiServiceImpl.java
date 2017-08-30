@@ -21,7 +21,11 @@ public class PaymentSubmissionsApiServiceImpl extends PaymentSubmissionsApiServi
       public Response createPaymentSubmission(String xIdempotencyKey,String xFapiFinancialId,String authorization,String xJwsSignature,PaymentSubmissionPOSTRequest body,String xFapiCustomerLastLoggedTime,String xFapiCustomerIpAddress,String xFapiInteractionId,SecurityContext securityContext)
       throws NotFoundException {
       // do some magic!
-      return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+    	  
+    	  PaymentSubmission pymSubmission = body.getData();
+      return Response.ok(pymSubmission).build();
+    	  
+      //return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
   }
       @Override
       public Response getPaymentSubmission(String paymentSubmissionId,String xFapiFinancialId,String authorization,String xFapiCustomerLastLoggedTime,String xFapiCustomerIpAddress,String xFapiInteractionId,SecurityContext securityContext)
