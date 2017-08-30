@@ -164,4 +164,9 @@
         <junit-version>4.8.1</junit-version>
         <servlet-api-version>2.5</servlet-api-version>
     </properties>
+    <parent>
+    	<groupId>com.jeelis.psd2hub</groupId>
+    	<artifactId>wrapper</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </parent>
 </project>
