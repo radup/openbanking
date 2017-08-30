@@ -28,6 +28,9 @@ public class PaymentsApiExample {
         PaymentSubmissionPOSTRequest body = new PaymentSubmissionPOSTRequest(); // PaymentSubmissionPOSTRequest | Setup a single immediate payment
         
         PaymentSubmission pymSubmission = new PaymentSubmission();
+        
+        pymSubmission.getInitiation();
+        
         pymSubmission.setPaymentId(UUID.randomUUID().toString());
         body.setData(pymSubmission);
         

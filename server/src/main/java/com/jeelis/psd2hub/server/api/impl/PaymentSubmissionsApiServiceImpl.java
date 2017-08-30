@@ -19,7 +19,7 @@ import javax.ws.rs.core.SecurityContext;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaResteasyServerCodegen", date = "2017-08-30T01:37:21.257+02:00")
 public class PaymentSubmissionsApiServiceImpl extends PaymentSubmissionsApiService {
 
-	private final static Logger LOGGER = Logger.getLogger(PaymentSubmissionsApiServiceImpl.class.getName());
+	private final static Logger LOGGER = Logger.getLogger(PaymentSubmissionsApiServiceImpl.class.getSimpleName());
 
 	@Override
 	public Response createPaymentSubmission(String xIdempotencyKey, String xFapiFinancialId, String authorization,
@@ -28,10 +28,12 @@ public class PaymentSubmissionsApiServiceImpl extends PaymentSubmissionsApiServi
 			throws NotFoundException {
 		// do some magic!
 
-		LOGGER.finest("xFapiCustomerLastLoggedTime" + xFapiCustomerLastLoggedTime + ", xFapiCustomerIpAddress"
-				+ xFapiCustomerIpAddress + ", xFapiInteractionId" + xFapiInteractionId);
+		LOGGER.info("xFapiCustomerLastLoggedTime=" + xFapiCustomerLastLoggedTime + ", xFapiCustomerIpAddress="
+				+ xFapiCustomerIpAddress + ", xFapiInteractionId=" + xFapiInteractionId);
 
 		PaymentSubmission pymSubmission = body.getData();
+		
+		
 		return Response.ok(pymSubmission).build();
 
 		// return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK,
