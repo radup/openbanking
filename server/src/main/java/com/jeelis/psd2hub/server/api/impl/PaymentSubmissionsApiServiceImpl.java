@@ -36,8 +36,7 @@ public class PaymentSubmissionsApiServiceImpl extends PaymentSubmissionsApiServi
 		
 		return Response.ok(pymSubmission).build();
 
-		// return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK,
-		// "magic!")).build();
+		// return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
 	}
 
 	@Override
