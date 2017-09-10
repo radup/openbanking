@@ -1,4 +1,4 @@
 {
-  "apiPackage":"com.jeelis.psd2hub.client.api",
-  "modelPackage":"com.jeelis.psd2hub.client.model"
+  "apiPackage":"com.finologee.psd2hub.ob.client.api",
+  "modelPackage":"com.finologee.psd2hub.ob.client.model"
 }

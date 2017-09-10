@@ -1,3 +1,3 @@
-<manifest package="com.jeelis.psd2hub.client" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="com.finologee.psd2hub.ob.client" xmlns:android="http://schemas.android.com/apk/res/android">
     <application />
 </manifest>
